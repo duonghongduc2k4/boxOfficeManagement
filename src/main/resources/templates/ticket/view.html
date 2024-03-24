@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/tickets">Ticket list</a>
+<h1>Ticket</h1>
+<label>Name ticket: </label>
+<p th:text="${ticket.name}"></p>
+<label>Price: </label>
+<p th:text="${ticket.price}"></p>
+<label>Movie theater: </label>
+<p th:text="${ticket.movieTheater.name}"></p>
+<label>Name account: </label>
+<p th:text="${ticket.account.name}"></p>
+</body>
+</html>

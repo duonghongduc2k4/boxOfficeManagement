@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/tickets/create">Create new ticket</a>
+<h1>Tickets</h1>
+<table border="1">
+    <tr>
+        <th>#</th>
+        <th>Name ticket</th>
+        <th>Price</th>
+        <th>Movie theater</th>
+        <th>Name account</th>
+        <th>Actions</th>
+    </tr>
+    <th:block th:each="ticket , tStatus : ${tickets}">
+        <tr>
+            <td th:text="${tStatus.count}"></td>
+            <td> <a th:href="@{'/tickets/' + ${ticket.getId()}}" th:text="${ticket.name}" ></a></td>
+            <td th:text="${ticket.price}"></td>
+            <td th:text="${ticket.movieTheater.name}"></td>
+            <td th:text="${ticket.account.name}"></td>
+            <td><a th:href="@{/tickets/update/__${ticket.id}__ }">Update</a></td>
+            <td><a th:href="@{/tickets/delete/__${ticket.id}__ }">Delete</a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
